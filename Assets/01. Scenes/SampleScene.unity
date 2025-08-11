@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 49486909}
   - component: {fileID: 49486908}
   - component: {fileID: 49486907}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Item_Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 157013254}
   - component: {fileID: 157013253}
   - component: {fileID: 157013252}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Item_Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -902,12 +902,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkRate: 0.05
+  lastCheckTime: 0
   maxCheckDistance: 3
   layerMask:
-    serializedVersion: 2
     m_Bits: 128
   curInteractGameObject: {fileID: 0}
   promptText: {fileID: 0}
+  camera: {fileID: 0}
 --- !u!1 &562174346
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,7 +1355,7 @@ GameObject:
   - component: {fileID: 893448740}
   - component: {fileID: 893448739}
   - component: {fileID: 893448738}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Item_Axe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2251,7 +2252,7 @@ GameObject:
   - component: {fileID: 1650774182}
   - component: {fileID: 1650774181}
   - component: {fileID: 1650774180}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Item_Carrot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2836,7 +2837,7 @@ GameObject:
   - component: {fileID: 2035715352}
   - component: {fileID: 2035715351}
   - component: {fileID: 2035715350}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Item_Rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2954,7 +2955,7 @@ GameObject:
   - component: {fileID: 2591026868984770786}
   - component: {fileID: 1466755799599251271}
   - component: {fileID: 3728419641971411853}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ax_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2972,7 +2973,7 @@ GameObject:
   - component: {fileID: 3179848005369964569}
   - component: {fileID: 3179848005372864569}
   - component: {fileID: 3179848005371734777}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Carrot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3105,7 +3106,7 @@ GameObject:
   - component: {fileID: 3230976099436849802}
   - component: {fileID: 3230976099433425578}
   - component: {fileID: 3230976099434424426}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rock1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3180,7 +3181,7 @@ GameObject:
   - component: {fileID: 5282800248603090039}
   - component: {fileID: 5282800248603892823}
   - component: {fileID: 5282800248604860055}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Log
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3314,7 +3315,7 @@ GameObject:
   - component: {fileID: 9082423860546159506}
   - component: {fileID: 5306537733851565111}
   - component: {fileID: 7944469305167263997}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sword_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
