@@ -93,6 +93,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnInventoryButton(InputAction.CallbackContext context)
+    {
+        if(context.phase == InputActionPhase.Started)
+        {
+            inventory?.Invoke();
+            ToggleCursor();
+        }
+    }
+
+    private void ToggleCursor()
+    {
+        bool toggle = Cursor.lockState == CursorLockMode.Locked;
+        Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
+        canLook = !toggle;
+    }
+
     bool IsGrounded()
     {
         Ray[] rays = new Ray[4]
