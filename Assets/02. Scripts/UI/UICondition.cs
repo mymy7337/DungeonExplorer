@@ -9,6 +9,6 @@ public class UICondition : MonoBehaviour
     public Condition stamina;
     void Start()
     {
-        PlayerManager.Instance.Player.condition.uicondition = this;
+        PlayerManager.Instance.Player.condition.uiCondition = this;
     }
 }
