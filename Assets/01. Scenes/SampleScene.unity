@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 330060687}
   - component: {fileID: 330060689}
   - component: {fileID: 330060688}
+  - component: {fileID: 330060690}
   m_Layer: 5
   m_Name: Hunger
   m_TagString: Untagged
@@ -200,6 +201,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330060686}
   m_CullTransparentMesh: 1
+--- !u!114 &330060690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330060686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 009cd738d3f7ba24886675292eb558c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curValue: 0
+  startValue: 400
+  maxValue: 500
+  passiveValue: 20
+  uiBar: {fileID: 415426994}
 --- !u!1 &415426992
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,11 +275,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: bd3c7a84854116944924395e63aef6ce, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -355,8 +373,9 @@ GameObject:
   - component: {fileID: 531441724}
   - component: {fileID: 531441723}
   - component: {fileID: 531441726}
-  - component: {fileID: 531441728}
+  - component: {fileID: 531441730}
   - component: {fileID: 531441727}
+  - component: {fileID: 531441729}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -542,7 +561,21 @@ MonoBehaviour:
   maxXLook: 85
   lookSensitivity: 0.1
   canLook: 1
---- !u!114 &531441728
+--- !u!114 &531441729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531441722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191c3e7295c5bb0499c5d25c788852ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiCondition: {fileID: 0}
+  noHungerHealthDecay: 2
+--- !u!114 &531441730
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -554,6 +587,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c565c08857a164743831773e7f770ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 0}
+  condition: {fileID: 0}
 --- !u!1 &562174346
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,6 +769,7 @@ GameObject:
   - component: {fileID: 714841799}
   - component: {fileID: 714841801}
   - component: {fileID: 714841800}
+  - component: {fileID: 714841802}
   m_Layer: 5
   m_Name: Health
   m_TagString: Untagged
@@ -800,6 +836,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 714841798}
   m_CullTransparentMesh: 1
+--- !u!114 &714841802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714841798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 009cd738d3f7ba24886675292eb558c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curValue: 0
+  startValue: 100
+  maxValue: 100
+  passiveValue: 1
+  uiBar: {fileID: 771947157}
 --- !u!1 &771947155
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,11 +910,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: bd3c7a84854116944924395e63aef6ce, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -886,6 +939,7 @@ GameObject:
   - component: {fileID: 810661969}
   - component: {fileID: 810661971}
   - component: {fileID: 810661970}
+  - component: {fileID: 810661972}
   m_Layer: 5
   m_Name: Stamina
   m_TagString: Untagged
@@ -952,6 +1006,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810661968}
   m_CullTransparentMesh: 1
+--- !u!114 &810661972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810661968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 009cd738d3f7ba24886675292eb558c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curValue: 0
+  startValue: 100
+  maxValue: 100
+  passiveValue: 5
+  uiBar: {fileID: 1311135927}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,11 +1247,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: bd3c7a84854116944924395e63aef6ce, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -1288,9 +1359,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1653563006}
   - {fileID: 1541048377}
   - {fileID: 1118982630}
-  - {fileID: 1653563006}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1308,6 +1379,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1541048377}
   - component: {fileID: 1541048378}
+  - component: {fileID: 1541048379}
   m_Layer: 5
   m_Name: Conditions
   m_TagString: Untagged
@@ -1363,6 +1435,21 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1541048379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541048376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 584676548ed5f5d40b34b0b6afc84360, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 714841802}
+  hunger: {fileID: 330060690}
+  stamina: {fileID: 810661972}
 --- !u!1 &1653563005
 GameObject:
   m_ObjectHideFlags: 0
@@ -1380,7 +1467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1653563006
 RectTransform:
   m_ObjectHideFlags: 0
