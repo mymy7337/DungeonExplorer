@@ -652,6 +652,7 @@ GameObject:
   - component: {fileID: 204793521}
   - component: {fileID: 204793520}
   - component: {fileID: 204793519}
+  - component: {fileID: 204793522}
   m_Layer: 0
   m_Name: UIInventory
   m_TagString: Untagged
@@ -742,6 +743,30 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!114 &204793522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204793517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16078c138e2e9cb4cb4c841fb300cc8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slots: []
+  inventoryWindow: {fileID: 1529587893}
+  slotPanel: {fileID: 1445233441}
+  dropPosition: {fileID: 0}
+  selectedItemName: {fileID: 1829034794}
+  selectedItemDescription: {fileID: 1791373935}
+  selectedItemStatName: {fileID: 1397456068}
+  selectedItemStatValue: {fileID: 1564328305}
+  useButton: {fileID: 44994803}
+  equipButton: {fileID: 1518811540}
+  unEquipButton: {fileID: 1644592540}
+  dropButton: {fileID: 464396665}
 --- !u!1 &234710821
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,6 +1152,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 464396665}
   m_CullTransparentMesh: 1
+--- !u!1 &479041747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 479041748}
+  m_Layer: 0
+  m_Name: DropPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &479041748
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479041747}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 531441725}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &483072987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1282,6 +1338,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1688244812}
+  - {fileID: 479041748}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &531441726
@@ -1437,6 +1494,7 @@ MonoBehaviour:
   controller: {fileID: 0}
   condition: {fileID: 0}
   itemData: {fileID: 0}
+  dropPosition: {fileID: 479041748}
 --- !u!114 &531441731
 MonoBehaviour:
   m_ObjectHideFlags: 0

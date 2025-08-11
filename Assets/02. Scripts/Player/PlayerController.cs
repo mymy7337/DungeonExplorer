@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -22,6 +23,8 @@ public class PlayerController : MonoBehaviour
     public bool canLook = true;
 
     Rigidbody _rigidbody;
+
+    public Action inventory;
 
     private void Awake()
     {
