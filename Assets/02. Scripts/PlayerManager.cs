@@ -12,7 +12,7 @@ public class PlayerManager : MonoBehaviour
         {
             if(instance == null)
             {
-                instance = new GameObject("PlayerManager").GetComponent<PlayerManager>();
+                instance = new GameObject("PlayerManager").AddComponent<PlayerManager>();
             }
             return instance;
         }
