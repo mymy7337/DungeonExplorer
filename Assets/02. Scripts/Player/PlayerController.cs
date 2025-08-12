@@ -129,4 +129,9 @@ public class PlayerController : MonoBehaviour
 
         return false;
     }
+
+    public void JumpLaunch(float power)
+    {
+        _rigidbody.AddForce(Vector2.up * power, ForceMode.Impulse);
+    }
 }
