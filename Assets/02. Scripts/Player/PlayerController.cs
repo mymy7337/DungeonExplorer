@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     private bool isMove;
     private bool isRun;
     private bool isCourch;
-    private bool canMove;
+    private bool canMove = true;
 
     [Header("Look")]
     public Transform cameraContainer;
