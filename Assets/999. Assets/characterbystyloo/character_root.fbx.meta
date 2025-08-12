@@ -3,7 +3,137 @@ guid: d11400610b5fd4f409e83598461755b3
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: a52359da397662146b2dc3ba1626227a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.022
+    second: {fileID: 2100000, guid: 1ad1d86f45fbea94f80203a089e0bf46, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.031
+    second: {fileID: 2100000, guid: 70eb1744704bff54c861e858f0c901cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body
+    second: {fileID: 2100000, guid: 119c756b041a27e47a5b84853c7eceb2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hair
+    second: {fileID: 2100000, guid: 838e213560c62624d8b8ae279a0bd6ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rufflelow
+    second: {fileID: 2100000, guid: 732972a6ee9111842819f4fb3b16e4e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shoe
+    second: {fileID: 2100000, guid: 4f1ac39503731e1498ef922de511382c, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: body_color
+    second: {fileID: 2800000, guid: 5a288df715eef78449d73af78213d9d1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: body_metallic
+    second: {fileID: 2800000, guid: 9d7e41c063f19bd418a33b6efc9e72af, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: body_normal
+    second: {fileID: 2800000, guid: 391ffb8be4b62974381881b44d8c9af0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: body_roughness
+    second: {fileID: 2800000, guid: 4ed79e8ee10e8754e95b778e877bfe26, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chaussurefinal_color
+    second: {fileID: 2800000, guid: 839b4b1990054bd44a847f0592e27e29, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chaussurefinal_metallic
+    second: {fileID: 2800000, guid: cd5d71977abdc194b9313bb5f7d98e10, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chaussurefinal_normal
+    second: {fileID: 2800000, guid: b4b68c50b67a0d843ab2240fbaf77fb5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chaussurefinal_roughness
+    second: {fileID: 2800000, guid: ffbbc41ca0a26f3449066201f45152e9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: gantlowfinal_color
+    second: {fileID: 2800000, guid: 9b997bc2f2fc8024ba165a662042a089, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: gantlowfinal_normal
+    second: {fileID: 2800000, guid: ac293f22ac883284ebe4b82d016a6140, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: hairfinal_color
+    second: {fileID: 2800000, guid: 9e2a6123e7c8b134d9dfa531c41ab5bc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: robelowfix_color
+    second: {fileID: 2800000, guid: 401ab5824166e154bb074b048cf6fbf4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: robelowfix_metallic
+    second: {fileID: 2800000, guid: 16437624849f6cc4fb05964fcf8d6794, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: robelowfix_normal
+    second: {fileID: 2800000, guid: d998b5d5577f6f54193f1acce21811f8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: robelowfix_roughness
+    second: {fileID: 2800000, guid: 43b79b2ec84617a41bb75100254106da, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rufflefinallow_color
+    second: {fileID: 2800000, guid: 707e96d4add2d8f46b6225c1b02f5fe2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rufflefinallow_metallic
+    second: {fileID: 2800000, guid: 90168d51a60960649b96a9e9cafa90ed, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rufflefinallow_normal
+    second: {fileID: 2800000, guid: b69ff83bb1aec6145ae9054b285a74c3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rufflefinallow_roughness
+    second: {fileID: 2800000, guid: 4b1f9e05719c03d439e64a2ccd2171fe, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
