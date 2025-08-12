@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour
         dir.y = _rigidbody.velocity.y;
 
         _rigidbody.velocity = dir;
+        PlayerManager.Instance.Player.animationController.Move(dir);
     }
 
     public void OnLookInput(InputAction.CallbackContext context)
