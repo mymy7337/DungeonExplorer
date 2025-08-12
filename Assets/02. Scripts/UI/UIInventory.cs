@@ -217,10 +217,10 @@ public class UIInventory : MonoBehaviour
         if (slots[selectedItemIndex].quantity <= 0 )
         {
             if (slots[selectedItemIndex].equipped)
-            {
-            }
-
+                UnEquip(selectedItemIndex);
             selectedItem = null;
+            slots[selectedItemIndex].item = null;
+            selectedItemIndex = -1;
             ClearSelectedItemWindow();
         }
 
