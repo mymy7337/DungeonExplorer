@@ -4,7 +4,18 @@ using UnityEngine;
 
 public class UISetting : MonoBehaviour
 {
-    public GameObject uiSetting;
+    public GameObject settingWindow;
+
+    private PlayerController controller;
+
+    private void Start()
+    {
+        controller = PlayerManager.Instance.Player.controller;
+
+        controller.setting += Toggle;
+
+        settingWindow.SetActive(false);
+    }
 
     public void OnFPSButton()
     {
@@ -16,8 +27,20 @@ public class UISetting : MonoBehaviour
 
     }
 
-    public void OnExitButton()
+    public void Toggle()
     {
-        uiSetting.SetActive(false);
+        if (IsOpen())
+        {
+            settingWindow.SetActive(false);
+        }
+        else
+        {
+            settingWindow.SetActive(true);
+        }
+    }
+
+    public bool IsOpen()
+    {
+        return settingWindow.activeInHierarchy;
     }
 }

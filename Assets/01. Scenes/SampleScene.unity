@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 112967290}
   - component: {fileID: 112967289}
   m_Layer: 5
-  m_Name: Image
+  m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1528,6 +1528,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d4f5846e-0df1-4452-ad4d-f946423187e6
     m_ActionName: Player/Sit[/Keyboard/leftCtrl]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 531441727}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnSettingButton
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0771b0d6-752c-4982-9adf-dc04d4696f68
+    m_ActionName: Player/Setting[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -5331,7 +5347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec859ec3d1fc1994a8c6a7efcba0bd05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiSetting: {fileID: 112967287}
+  settingWindow: {fileID: 112967287}
 --- !u!1 &1564328303
 GameObject:
   m_ObjectHideFlags: 0
