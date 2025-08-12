@@ -27,12 +27,14 @@ public class PlayerController : MonoBehaviour
     public bool canLook = true;
 
     Rigidbody _rigidbody;
+    CapsuleCollider _collider;
 
     public Action inventory;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _collider = GetComponent<CapsuleCollider>();
     }
 
     private void Start()
@@ -128,6 +130,16 @@ public class PlayerController : MonoBehaviour
             float yPos = !isCourch ? 2f : 1.3f;
             PlayerManager.Instance.Player.animationController.Crouch(isCourch);
             cameraContainer.localPosition = new Vector3(0, yPos, 0);
+            if (isCourch)
+            {
+                _collider.center = new Vector3(0, 0.6f, 0);
+                _collider.height = 1.5f;
+            }
+            else
+            {
+                _collider.center = new Vector3(0, 1f, 0);
+                _collider.height = 2.2f;
+            }
         }
     }
 
