@@ -6,9 +6,9 @@ public class Jumper : MonoBehaviour
 {
     public float jumpPower;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             PlayerManager.Instance.Player.controller.JumpLaunch(jumpPower);
         }
