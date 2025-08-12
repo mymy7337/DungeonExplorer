@@ -25,6 +25,9 @@ public class PlayerController : MonoBehaviour
     public float lookSensitivity;
     private Vector2 mouseDelta;
     public bool canLook = true;
+    private bool isFPS = true;
+
+    public GameObject player;
 
     Rigidbody _rigidbody;
     CapsuleCollider _collider;
@@ -45,6 +48,17 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //if (!isFPS)
+        //{
+        //    if (curMovementInput.sqrMagnitude < 0.01f) return;
+
+        //    Vector3 dir = new Vector3(curMovementInput.x, 0f, curMovementInput.y);
+        //    float targetDeg = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
+
+        //    var angle = player.transform.localEulerAngles;
+        //    angle.y = targetDeg;
+        //    player.transform.localEulerAngles = angle;
+        //}
         Move();
     }
 
@@ -101,7 +115,6 @@ public class PlayerController : MonoBehaviour
 
         if (context.phase == InputActionPhase.Performed)
         {
-
             isRun = true;
             curMovementInput *= 2;
         }
@@ -128,18 +141,23 @@ public class PlayerController : MonoBehaviour
         {
             isCourch = !isCourch;
             canMove = !isCourch;
-            float yPos = !isCourch ? 2f : 1.3f;
+
             PlayerManager.Instance.Player.animationController.Crouch(isCourch);
-            cameraContainer.localPosition = new Vector3(0, yPos, 0);
-            if (isCourch)
+
+            if (isFPS) 
             {
-                _collider.center = new Vector3(0, 0.6f, 0);
-                _collider.height = 1.5f;
-            }
-            else
-            {
-                _collider.center = new Vector3(0, 1f, 0);
-                _collider.height = 2.2f;
+                float yPos = !isCourch ? 2f : 1.3f;
+                cameraContainer.localPosition = new Vector3(0, yPos, 0);
+                if (isCourch)
+                {
+                    _collider.center = new Vector3(0, 0.6f, 0);
+                    _collider.height = 1.5f;
+                }
+                else
+                {
+                    _collider.center = new Vector3(0, 1f, 0);
+                    _collider.height = 2.05f;
+                }
             }
         }
     }
@@ -193,5 +211,11 @@ public class PlayerController : MonoBehaviour
     public void JumpLaunch(float power)
     {
         _rigidbody.AddForce(Vector2.up * power, ForceMode.Impulse);
+    }
+
+    public void ChangeCameraPosition(Vector3 position)
+    {
+        isFPS = !isFPS;
+        cameraContainer.localPosition = position;
     }
 }

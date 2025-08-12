@@ -19,12 +19,14 @@ public class UISetting : MonoBehaviour
 
     public void OnFPSButton()
     {
-
+        Vector3 fpsPos = new Vector3(0, 2, 0.3f);
+        controller.ChangeCameraPosition(fpsPos);
     }
 
     public void OnTPSButton()
     {
-
+        Vector3 tpsPos = new Vector3(0, 3, -3);
+        controller.ChangeCameraPosition(tpsPos);
     }
 
     public void Toggle()
