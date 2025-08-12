@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 curMovementInput;
     public float jumpPower;
     public LayerMask groundLayerMask;
+    private bool isMove;
+    private bool isRun;
 
     [Header("Look")]
     public Transform cameraContainer;
@@ -66,7 +68,9 @@ public class PlayerController : MonoBehaviour
         dir.y = _rigidbody.velocity.y;
 
         _rigidbody.velocity = dir;
+        
         PlayerManager.Instance.Player.animationController.Move(dir);
+        PlayerManager.Instance.Player.animationController.Run(isRun);
     }
 
     public void OnLookInput(InputAction.CallbackContext context)
@@ -79,10 +83,30 @@ public class PlayerController : MonoBehaviour
         if(context.phase == InputActionPhase.Performed)
         {
             curMovementInput = context.ReadValue<Vector2>();
+            isMove = true;
         }
         else if (context.phase == InputActionPhase.Canceled)
         {
             curMovementInput = Vector2.zero;
+            isMove = false;
+        }
+    }
+
+    public void OnRunInput(InputAction.CallbackContext context)
+    {
+        if (isMove)
+        {
+            if (context.phase == InputActionPhase.Performed)
+            {
+                isRun = true;
+                curMovementInput *= 2;
+
+            }
+            else if (context.phase == InputActionPhase.Canceled)
+            {
+                isRun = false;
+                curMovementInput /= 2;
+            }
         }
     }
 
@@ -91,6 +115,14 @@ public class PlayerController : MonoBehaviour
         if(context.phase == InputActionPhase.Started && IsGrounded())
         {
             _rigidbody.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
+        }
+    }
+
+    public void OnSitInput(InputAction.CallbackContext context)
+    {
+        if(context.phase == InputActionPhase.Started)
+        {
+
         }
     }
 
