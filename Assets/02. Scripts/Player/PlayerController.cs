@@ -70,9 +70,10 @@ public class PlayerController : MonoBehaviour
         dir.y = _rigidbody.velocity.y;
 
         _rigidbody.velocity = dir;
-        
+
         PlayerManager.Instance.Player.animationController.Move(dir);
-        PlayerManager.Instance.Player.animationController.Run(isRun);
+        if(dir != Vector3.zero)
+            PlayerManager.Instance.Player.animationController.Run(isRun);
     }
 
     public void OnLookInput(InputAction.CallbackContext context)
@@ -82,7 +83,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnMoveInput(InputAction.CallbackContext context)
     {
-        if(context.phase == InputActionPhase.Performed && canMove)
+        if (context.phase == InputActionPhase.Performed && canMove)
         {
             curMovementInput = context.ReadValue<Vector2>();
             isMove = true;
@@ -96,25 +97,24 @@ public class PlayerController : MonoBehaviour
 
     public void OnRunInput(InputAction.CallbackContext context)
     {
-        if (isMove)
-        {
-            if (context.phase == InputActionPhase.Performed)
-            {
-                isRun = true;
-                curMovementInput *= 2;
 
-            }
-            else if (context.phase == InputActionPhase.Canceled)
-            {
-                isRun = false;
-                curMovementInput /= 2;
-            }
+        if (context.phase == InputActionPhase.Performed)
+        {
+
+            isRun = true;
+            curMovementInput *= 2;
+        }
+
+        else if (context.phase == InputActionPhase.Canceled)
+        {
+            isRun = false;
+            curMovementInput /= 2;
         }
     }
 
     public void OnJumpInput(InputAction.CallbackContext context)
     {
-        if(context.phase == InputActionPhase.Started && IsGrounded())
+        if (context.phase == InputActionPhase.Started && IsGrounded())
         {
             PlayerManager.Instance.Player.animationController.Jump();
             _rigidbody.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
@@ -123,7 +123,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnCrouchInput(InputAction.CallbackContext context)
     {
-        if(context.phase == InputActionPhase.Started && curMovementInput.magnitude == 0)
+        if (context.phase == InputActionPhase.Started && curMovementInput.magnitude == 0)
         {
             isCourch = !isCourch;
             canMove = !isCourch;
@@ -133,7 +133,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnInventoryButton(InputAction.CallbackContext context)
     {
-        if(context.phase == InputActionPhase.Started)
+        if (context.phase == InputActionPhase.Started)
         {
             inventory?.Invoke();
             ToggleCursor();
