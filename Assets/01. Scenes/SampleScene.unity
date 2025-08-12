@@ -1317,7 +1317,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 531441727}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnSitInput
+        m_MethodName: OnCrouchInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

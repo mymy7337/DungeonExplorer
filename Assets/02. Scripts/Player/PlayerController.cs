@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayerMask;
     private bool isMove;
     private bool isRun;
+    private bool isCourch;
+    private bool canMove;
 
     [Header("Look")]
     public Transform cameraContainer;
@@ -80,7 +82,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnMoveInput(InputAction.CallbackContext context)
     {
-        if(context.phase == InputActionPhase.Performed)
+        if(context.phase == InputActionPhase.Performed && canMove)
         {
             curMovementInput = context.ReadValue<Vector2>();
             isMove = true;
@@ -119,11 +121,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnSitInput(InputAction.CallbackContext context)
+    public void OnCrouchInput(InputAction.CallbackContext context)
     {
-        if(context.phase == InputActionPhase.Started)
+        if(context.phase == InputActionPhase.Started && curMovementInput.magnitude == 0)
         {
-
+            isCourch = !isCourch;
+            canMove = !isCourch;
+            PlayerManager.Instance.Player.animationController.Crouch(isCourch);
         }
     }
 
