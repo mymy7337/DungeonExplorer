@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     private Vector2 curMovementInput;
     public float jumpPower;
     public LayerMask groundLayerMask;
-    private bool isMove;
     private bool isRun;
     private bool isCourch;
     private bool canMove = true;
@@ -86,12 +85,10 @@ public class PlayerController : MonoBehaviour
         if (context.phase == InputActionPhase.Performed && canMove)
         {
             curMovementInput = context.ReadValue<Vector2>();
-            isMove = true;
         }
         else if (context.phase == InputActionPhase.Canceled)
         {
             curMovementInput = Vector2.zero;
-            isMove = false;
         }
     }
 
