@@ -10,6 +10,7 @@ public class Jumper : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
+            PlayerManager.Instance.Player.controller.JumpLaunch(jumpPower);
         }
     }
 }
