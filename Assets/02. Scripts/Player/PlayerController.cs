@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     CapsuleCollider _collider;
 
     public Action inventory;
+    public Action setting;
 
     private void Awake()
     {
@@ -151,6 +152,15 @@ public class PlayerController : MonoBehaviour
             ToggleCursor();
         }
     }
+
+    public void OnSettingButton(InputAction.CallbackContext context)
+    {
+        if(context.phase == InputActionPhase.Started)
+        {
+            setting?.Invoke();
+            ToggleCursor();
+        }
+    }    
 
     private void ToggleCursor()
     {
