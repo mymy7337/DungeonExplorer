@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayerMask;
     private bool isRun;
     private bool isCourch;
+    public float crouchSpeed;
     private bool canMove = true;
 
     [Header("Look")]
@@ -124,7 +125,9 @@ public class PlayerController : MonoBehaviour
         {
             isCourch = !isCourch;
             canMove = !isCourch;
+            float yPos = !isCourch ? 2f : 1.3f;
             PlayerManager.Instance.Player.animationController.Crouch(isCourch);
+            cameraContainer.localPosition = new Vector3(0, yPos, 0);
         }
     }
 
