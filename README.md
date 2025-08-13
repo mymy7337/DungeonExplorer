@@ -46,7 +46,7 @@ Assets/
 - `Performed`에서 이동 벡터 갱신, `Canceled`에서 0으로 초기화 → 대각 이동/다중 입력 반영.
 
 ### 타겟팅
--  RayCast`로 타겟 탐색,
+-  `RayCast`로 타겟 탐색,
 - `LayerMask`로 레벨 지형/목표 분리(시야 가림 대응).
 
 
