@@ -47,6 +47,11 @@ public class PlayerCondition : MonoBehaviour, IDamagable
         hunger.Add(amount);
     }
 
+    public void SpeedBoost(float amount)
+    {
+        StartCoroutine(PlayerManager.Instance.Player.controller.MoveSpeedBoost(amount));
+    }
+
     public void Die()
     {
         Debug.Log("»ç¸Á");

@@ -53,7 +53,6 @@ public class PlayerController : MonoBehaviour
         Move();
     }
 
-
     private void LateUpdate()
     {
         if (canLook)
@@ -80,7 +79,7 @@ public class PlayerController : MonoBehaviour
         _rigidbody.velocity = dir + boatVelocity;
 
         PlayerManager.Instance.Player.animationController.Move(dir);
-        if(dir != Vector3.zero)
+        if (dir != Vector3.zero)
             PlayerManager.Instance.Player.animationController.Run(isRun);
     }
 
@@ -135,7 +134,7 @@ public class PlayerController : MonoBehaviour
 
             PlayerManager.Instance.Player.animationController.Crouch(isCourch);
 
-            if (isFPS) 
+            if (isFPS)
             {
                 float yPos = !isCourch ? 2f : 1.3f;
                 cameraContainer.localPosition = new Vector3(0, yPos, 0);
@@ -164,12 +163,12 @@ public class PlayerController : MonoBehaviour
 
     public void OnSettingButton(InputAction.CallbackContext context)
     {
-        if(context.phase == InputActionPhase.Started)
+        if (context.phase == InputActionPhase.Started)
         {
             setting?.Invoke();
             ToggleCursor();
         }
-    }    
+    }
 
     private void ToggleCursor()
     {
@@ -213,5 +212,12 @@ public class PlayerController : MonoBehaviour
     public void SetPlatformVelocity(Vector3 velocity)
     {
         boatVelocity = velocity;
+    }
+
+    public IEnumerator MoveSpeedBoost(float speed)
+    {
+        moveSpeed *= speed;
+        yield return new WaitForSeconds(3);
+        moveSpeed /= speed;
     }
 }
