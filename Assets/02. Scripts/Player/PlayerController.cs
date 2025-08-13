@@ -27,9 +27,11 @@ public class PlayerController : MonoBehaviour
     public bool canLook = true;
     private bool isFPS = true;
 
+    Vector3 boatVelocity = Vector3.zero;
+
     public GameObject player;
 
-    Rigidbody _rigidbody;
+    public Rigidbody _rigidbody;
     CapsuleCollider _collider;
 
     public Action inventory;
@@ -48,17 +50,6 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //if (!isFPS)
-        //{
-        //    if (curMovementInput.sqrMagnitude < 0.01f) return;
-
-        //    Vector3 dir = new Vector3(curMovementInput.x, 0f, curMovementInput.y);
-        //    float targetDeg = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
-
-        //    var angle = player.transform.localEulerAngles;
-        //    angle.y = targetDeg;
-        //    player.transform.localEulerAngles = angle;
-        //}
         Move();
     }
 
@@ -86,7 +77,7 @@ public class PlayerController : MonoBehaviour
         dir *= moveSpeed;
         dir.y = _rigidbody.velocity.y;
 
-        _rigidbody.velocity = dir;
+        _rigidbody.velocity = dir + boatVelocity;
 
         PlayerManager.Instance.Player.animationController.Move(dir);
         if(dir != Vector3.zero)
@@ -217,5 +208,10 @@ public class PlayerController : MonoBehaviour
     {
         isFPS = !isFPS;
         cameraContainer.localPosition = position;
+    }
+
+    public void SetPlatformVelocity(Vector3 velocity)
+    {
+        boatVelocity = velocity;
     }
 }
