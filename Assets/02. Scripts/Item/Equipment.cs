@@ -21,12 +21,16 @@ public class Equipment : MonoBehaviour
     {
         UnEquip();
         curEquip = Instantiate(data.equipPrefab, equipParent).GetComponent<Equip>();
+        if (curEquip.hasValue)
+            controller.SpeedIncrease(curEquip.value);
     }
 
     public void UnEquip()
     {
         if (curEquip != null)
         {
+            if (curEquip.hasValue)
+                controller.SpeedDecrease(curEquip.value);
             Destroy(curEquip.gameObject);
             curEquip = null;
         }

@@ -220,4 +220,14 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(3);
         moveSpeed /= speed;
     }
+
+    public void SpeedIncrease(float speed)
+    {
+        moveSpeed *= speed;
+    }
+
+    public void SpeedDecrease(float speed)
+    {
+        moveSpeed /= speed;
+    }
 }
